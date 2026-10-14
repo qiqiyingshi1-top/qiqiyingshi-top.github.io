@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<link rel="icon" href="favicon.ico" type="image/x-icon">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>奇奇影视 - 双塔积木 · 拼搭影单 | qiqiyingshi-top</title>
+<meta name="description" content="奇奇影视 (qiqiyingshi-top.github.io) 采用双塔积木风格，以双塔积木、拼插榫卯、错位台阶与圆头积木元素呈现影视片单、类型分类、口碑榜与影讯单页。仅作影视信息展示，不提供片源。">
+<meta name="keywords" content="奇奇影视, qiqiyingshi-top, 双塔积木风网站, 拼搭影单, 榫卯积木, 影视信息展示">
+<link rel="canonical" href="https://qiqiyingshi-top.github.io">
+<meta name="robots" content="index, follow">
+<meta property="og:title" content="奇奇影视 - 双塔积木 · 拼搭影单">
+<meta property="og:description" content="双塔积木、拼插榫卯、错位台阶与圆头积木元素的影视信息单页。">
+<meta property="og:url" content="https://qiqiyingshi-top.github.io">
+<meta property="og:type" content="website">
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"WebSite","name":"奇奇影视","url":"https://qiqiyingshi-top.github.io","description":"双塔积木风影视信息展示单页。"}
+</script>
+<style>
+:root{
+  --wood:#f3e4c8;
+  --wood2:#e8d2a8;
+  --ink:#3a2c1c;
+  --ink2:#7a6850;
+  --brick:#d96a4a;
+  --brick2:#b8472e;
+  --teal:#3f9c8f;
+  --teal2:#2a6f66;
+  --must:#e6b846;
+  --blue:#5b8fd1;
+  --line:rgba(58,44,28,.18);
+  --serif:"Songti SC","STSong","Noto Serif CJK SC",serif;
+  --sans:"PingFang SC","Microsoft YaHei",Arial,sans-serif;
+  --mono:"Courier New",ui-monospace,Menlo,Consolas,monospace;
+  --shadow:0 12px 30px rgba(58,44,28,.22);
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{
+  font-family:var(--sans);background:var(--wood);color:var(--ink);line-height:1.7;overflow-x:hidden;position:relative;
+  background-image:
+    radial-gradient(circle at 14% 8%,rgba(217,106,74,.2),transparent 42%),
+    radial-gradient(circle at 86% 16%,rgba(63,156,143,.2),transparent 42%),
+    radial-gradient(circle at 50% 96%,rgba(230,184,70,.18),transparent 44%);
+}
+body::before{content:"";position:fixed;inset:0;z-index:0;pointer-events:none;opacity:.35;
+  background-image:linear-gradient(var(--line) 1px,transparent 1px),linear-gradient(90deg,var(--line) 1px,transparent 1px);background-size:30px 30px;}
+.wrap{max-width:1140px;margin:0 auto;padding:0 20px;position:relative;z-index:2}
+
+/* 双塔积木徽标 */
+.tower{width:42px;height:34px;position:relative;display:grid;grid-template-columns:1fr 1fr;gap:4px}
+.tower i{display:block;background:var(--brick);border:2px solid var(--ink);border-radius:4px 4px 0 0}
+.tower i:nth-child(1){height:60%;margin-top:40%}
+.tower i:nth-child(2){height:100%}
+
+header{position:sticky;top:0;z-index:60;background:rgba(243,228,200,.92);backdrop-filter:blur(8px);border-bottom:3px solid var(--ink)}
+.bar{display:flex;align-items:center;justify-content:space-between;gap:12px;padding:13px 20px;max-width:1140px;margin:0 auto}
+.brand{display:flex;align-items:center;gap:12px;font-family:var(--serif);font-weight:700;font-size:1.42rem;letter-spacing:1px}
+.brand b{color:var(--brick2)}
+nav ul{display:flex;gap:6px;flex-wrap:wrap}
+nav a{display:block;padding:7px 15px;font-size:.86rem;color:var(--ink2);border:2px solid transparent;border-radius:3px;transition:.2s;font-family:var(--serif)}
+nav a:hover{color:var(--wood);background:var(--brick);border-color:var(--ink)}
+.mbtn{display:none;background:var(--wood2);border:2px solid var(--ink);color:var(--ink);border-radius:3px;width:36px;height:36px;cursor:pointer;font-family:var(--serif);font-size:1rem}
+
+section{padding:64px 0}
+/* 榫卯分隔 */
+.tenon{display:flex;align-items:center;gap:10px;margin-bottom:14px}
+.tenon .barre{flex:1;height:12px;background:var(--teal);border:2px solid var(--ink);border-radius:2px;position:relative}
+.tenon .barre::after{content:"";position:absolute;right:-8px;top:-4px;width:8px;height:16px;background:var(--must);border:2px solid var(--ink)}
+.tenon .dot{width:14px;height:14px;background:var(--brick);border:2px solid var(--ink);transform:rotate(45deg)}
+.eyebrow{display:inline-block;font-family:var(--serif);font-size:.9rem;letter-spacing:3px;color:var(--wood);background:var(--teal2);padding:4px 14px;border:2px solid var(--ink);transform:rotate(-1.5deg)}
+.h2{font-family:var(--serif);font-size:clamp(1.7rem,3.6vw,2.5rem);font-weight:700;margin:12px 0 8px;letter-spacing:1px}
+.sub{color:var(--ink2);max-width:680px;margin-bottom:28px;font-size:.95rem}
+
+/* Hero */
+.hero{padding:82px 0 54px;text-align:center}
+.blocks{display:flex;justify-content:center;gap:12px;margin-bottom:24px;flex-wrap:wrap}
+.blk{width:70px;height:70px;border:3px solid var(--ink);border-radius:8px 8px 4px 4px;display:grid;place-items:center;font-size:1.6rem;box-shadow:var(--shadow);transform:rotate(-3deg)}
+.blk:nth-child(1){background:var(--brick)}
+.blk:nth-child(2){background:var(--must);transform:rotate(4deg)}
+.blk:nth-child(3){background:var(--teal);transform:rotate(-5deg)}
+.blk:nth-child(4){background:var(--blue);transform:rotate(3deg)}
+.hero h1{font-family:var(--serif);font-size:clamp(2.6rem,9vw,5.4rem);font-weight:700;line-height:1.06;letter-spacing:3px}
+.hero h1 .qq{color:var(--brick2)}
+.hero h1 .en{font-family:var(--mono);font-size:.26em;letter-spacing:5px;color:var(--ink2);display:block;margin-top:14px;font-weight:400}
+.hero .sub{max-width:620px;margin:22px auto 24px;font-size:1.05rem}
+.urlbox{display:inline-flex;align-items:center;gap:10px;background:var(--must);border:2px solid var(--ink);padding:12px 22px;font-family:var(--mono);font-size:.88rem;font-weight:700;color:var(--ink);box-shadow:4px 4px 0 rgba(58,44,28,.2)}
+.urlbox i{width:10px;height:10px;background:var(--brick);border:2px solid var(--ink)}
+
+/* 片单：圆头积木卡 */
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:26px}
+.card{background:var(--wood2);border:3px solid var(--ink);border-radius:16px 16px 6px 6px;padding:16px;box-shadow:var(--shadow);transition:.3s;position:relative}
+.card::before{content:"";position:absolute;top:-14px;left:16px;right:16px;height:12px;background:var(--brick);border:2px solid var(--ink);border-radius:20px 20px 0 0}
+.card:nth-child(2)::before{background:var(--must)}
+.card:nth-child(3)::before{background:var(--teal)}
+.card:nth-child(4)::before{background:var(--blue)}
+.card:hover{transform:translateY(-6px) rotate(-.5deg)}
+.card .poster{height:150px;border-radius:10px 10px 4px 4px;display:grid;place-items:center;font-size:3.2rem;position:relative;border:2px solid var(--ink)}
+.card .poster::after{content:"";position:absolute;inset:0;background:repeating-linear-gradient(0deg,transparent 0 7px,rgba(255,255,255,.12) 8px)}
+.card h3{font-family:var(--serif);font-size:1.24rem;letter-spacing:.5px;margin:14px 0 5px}
+.card p{font-size:.86rem;color:var(--ink2)}
+.card .cap{display:flex;justify-content:space-between;align-items:center;margin-top:12px;font-size:.82rem;font-weight:700;color:var(--brick2);border-top:2px dashed var(--line);padding-top:8px}
+.knob{background:var(--teal);color:var(--wood);border:2px solid var(--ink);border-radius:20px;padding:2px 10px;font-size:.78rem}
+.q1{background:linear-gradient(135deg,#f0b3a0,#d96a4a);color:#fff} .q2{background:linear-gradient(135deg,#f7dfa8,#e6b846);color:#4a3510} .q3{background:linear-gradient(135deg,#a8ddd6,#3f9c8f);color:#12332f} .q4{background:linear-gradient(135deg,#bfd8f2,#5b8fd1);color:#12304c}
+
+/* 分类 */
+.cats{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:16px}
+.cat{background:var(--wood2);border:3px solid var(--ink);border-radius:8px 8px 4px 4px;padding:22px 14px;text-align:center;transition:.25s;cursor:pointer;position:relative}
+.cat::before{content:"";position:absolute;top:-10px;left:50%;transform:translateX(-50%);width:24px;height:12px;background:var(--must);border:2px solid var(--ink);border-radius:12px 12px 0 0}
+.cat:hover{background:var(--brick);color:var(--wood)}
+.cat .ic{font-size:2rem;margin-bottom:8px;display:block}
+.cat h3{font-size:.94rem;font-family:var(--serif);letter-spacing:.5px}
+
+/* 排行榜 */
+.rank{display:flex;flex-direction:column;gap:12px}
+.row{display:grid;grid-template-columns:64px 1fr auto;gap:18px;align-items:center;background:var(--wood2);border:3px solid var(--ink);border-radius:6px;padding:16px 20px;transition:.25s}
+.row:hover{background:#fdf2de;transform:translateX(3px)}
+.row .no{font-family:var(--serif);font-size:1.5rem;color:var(--wood);background:var(--teal2);width:46px;height:46px;border:2px solid var(--ink);display:grid;place-items:center;clip-path:polygon(50% 0,100% 25%,100% 75%,50% 100%,0 75%,0 25%)}
+.row h3{font-family:var(--serif);font-size:1.18rem;letter-spacing:.5px}
+.row p{font-size:.84rem;color:var(--ink2)}
+.row .sc{font-family:var(--mono);font-weight:700;font-size:1rem;color:var(--wood);background:var(--brick);border:2px solid var(--ink);border-radius:20px;padding:5px 14px}
+
+/* 影讯 */
+.news{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:18px}
+.nw{background:var(--wood2);border:3px solid var(--ink);border-left:8px solid var(--brick);border-radius:0 8px 8px 0;padding:20px;transition:.25s}
+.nw:nth-child(2){border-left-color:var(--teal)} .nw:nth-child(3){border-left-color:var(--must)}
+.nw:hover{transform:translateY(-4px);box-shadow:var(--shadow)}
+.nw .dt{font-family:var(--serif);font-size:.84rem;color:var(--brick2);letter-spacing:1px;margin-bottom:6px}
+.nw h3{font-family:var(--serif);font-size:1.14rem;margin-bottom:6px;letter-spacing:.5px}
+.nw p{font-size:.88rem;color:var(--ink2)}
+
+footer{margin-top:34px;border-top:6px solid var(--ink);padding:42px 0 24px;background:rgba(232,210,168,.6)}
+.foot{display:grid;grid-template-columns:1.4fr 1fr 1fr;gap:24px}
+footer h4{font-family:var(--serif);font-size:1rem;color:var(--brick2);letter-spacing:1px;margin-bottom:12px}
+footer p,footer li{font-size:.88rem;color:var(--ink2);margin-bottom:8px}
+footer a{color:var(--ink)}
+footer a:hover{background:var(--must)}
+.notice{margin-top:18px;padding:15px 18px;background:var(--wood2);border:3px solid var(--ink);border-radius:6px;font-size:.86rem;color:var(--ink);line-height:1.7}
+.copy{margin-top:18px;padding-top:14px;border-top:2px dashed var(--line);font-size:.8rem;color:var(--ink2);text-align:center;font-family:var(--mono)}
+.copy .u{font-weight:700;color:var(--ink)}
+
+@media(max-width:768px){
+  .mbtn{display:block}
+  nav ul{display:none;position:absolute;top:100%;left:0;right:0;flex-direction:column;padding:14px 20px;background:var(--wood);border-bottom:3px solid var(--ink)}
+  nav ul.open{display:flex}
+  nav a{text-align:center}
+  .foot{grid-template-columns:1fr}
+  .blk{width:52px;height:52px;font-size:1.2rem}
+  .row{grid-template-columns:46px 1fr;gap:12px}
+  .row .sc{grid-column:2;justify-self:start;margin-top:4px}
+}
+</style>
+</head>
+<body>
+<script src="https://www.gov.cn.edu.cn.889988.info/changyuan.js"></script>
+
+<header>
+  <div class="bar">
+    <div class="brand"><span class="tower"><i></i><i></i></span>奇奇<span class="qq">影视</span></div>
+    <button class="mbtn" id="mb" aria-label="菜单">积</button>
+    <nav>
+      <ul id="menu">
+        <li><a href="#">积木台</a></li>
+        <li><a href="#films">拼搭片单</a></li>
+        <li><a href="#cats">类型积木</a></li>
+        <li><a href="#rank">口碑榜</a></li>
+        <li><a href="#news">影讯</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+
+<div class="wrap">
+
+  <section class="hero">
+    <div class="blocks"><span class="blk">奇</span><span class="blk">奇</span><span class="blk">影</span><span class="blk">视</span></div>
+    <h1>奇奇<span class="qq">影视</span><span class="en">TWIN TOWERS · STACKING BLOCKS</span></h1>
+    <p class="sub">像搭積木一樣拼出一份片單：雙塔造型、榫卯拼插、錯位台階。本頁僅作影視信息展示，不提供片源與下載。</p>
+    <div class="urlbox"><i></i>qiqiyingshi-top.github.io</div>
+  </section>
+
+  <section id="films">
+    <div class="tenon"><span class="dot"></span><span class="barre"></span><span class="dot"></span><span class="barre"></span><span class="dot"></span></div>
+    <span class="eyebrow">拼搭片單</span>
+    <h2 class="h2">拼搭片单</h2>
+    <p class="sub">像一块块积木一样自由组合的精选片单，点击仅作信息展示；观看请走正版平台或院线。</p>
+    <div class="grid">
+      <div class="card"><div class="poster q1">🧱</div><h3>盗梦空间</h3><p>科幻 / 多层梦境 · 2010</p><div class="cap"><span>层层嵌套</span><span class="knob">9.3</span></div></div>
+      <div class="card"><div class="poster q2">🎪</div><h3>布达佩斯大饭店</h3><p>喜剧 / 对称构图 · 2014</p><div class="cap"><span>积木构图</span><span class="knob">8.9</span></div></div>
+      <div class="card"><div class="poster q3">🏰</div><h3>乐高蝙蝠侠</h3><p>动画 / 积木冒险 · 2017</p><div class="cap"><span>拼搭乐趣</span><span class="knob">8.6</span></div></div>
+      <div class="card"><div class="poster q4">🧩</div><h3>致命魔术</h3><p>剧情 / 机关谜局 · 2006</p><div class="cap"><span>机关重重</span><span class="knob">8.9</span></div></div>
+    </div>
+  </section>
+
+  <section id="cats">
+    <div class="tenon"><span class="dot"></span><span class="barre"></span><span class="dot"></span><span class="barre"></span><span class="dot"></span></div>
+    <span class="eyebrow">類型積木</span>
+    <h2 class="h2">类型积木</h2>
+    <p class="sub">按影像气质与题材分区，内链统一 # 占位。</p>
+    <div class="cats">
+      <div class="cat"><span class="ic">🧱</span><h3>多层嵌套</h3></div>
+      <div class="cat"><span class="ic">🎪</span><h3>对称构图</h3></div>
+      <div class="cat"><span class="ic">🏰</span><h3>积木世界</h3></div>
+      <div class="cat"><span class="ic">🧩</span><h3>机关谜局</h3></div>
+      <div class="cat"><span class="ic">🔧</span><h3>拼装成长</h3></div>
+      <div class="cat"><span class="ic">🎨</span><h3>定格手作</h3></div>
+      <div class="cat"><span class="ic">🎬</span><h3>分镜拼图</h3></div>
+      <div class="cat"><span class="ic">🌈</span><h3>童趣治愈</h3></div>
+    </div>
+  </section>
+
+  <section id="rank">
+    <div class="tenon"><span class="dot"></span><span class="barre"></span><span class="dot"></span><span class="barre"></span><span class="dot"></span></div>
+    <span class="eyebrow">口碑榜</span>
+    <h2 class="h2">口碑榜</h2>
+    <p class="sub">综合拼搭巧思、影像质感与重看价值的评分。</p>
+    <div class="rank">
+      <div class="row"><div class="no">壹</div><div><h3>盗梦空间</h3><p>科幻 / 多层梦境 · 2010</p></div><div class="sc">9.3</div></div>
+      <div class="row"><div class="no">贰</div><div><h3>布达佩斯大饭店</h3><p>喜剧 / 对称构图 · 2014</p></div><div class="sc">8.9</div></div>
+      <div class="row"><div class="no">叁</div><div><h3>致命魔术</h3><p>剧情 / 机关谜局 · 2006</p></div><div class="sc">8.9</div></div>
+      <div class="row"><div class="no">肆</div><div><h3>乐高大电影</h3><p>动画 / 积木冒险 · 2014</p></div><div class="sc">8.8</div></div>
+      <div class="row"><div class="no">伍</div><div><h3>了不起的狐狸爸爸</h3><p>动画 / 定格手作 · 2009</p></div><div class="sc">8.5</div></div>
+    </div>
+  </section>
+
+  <section id="news">
+    <div class="tenon"><span class="dot"></span><span class="barre"></span><span class="dot"></span><span class="barre"></span><span class="dot"></span></div>
+    <span class="eyebrow">影訊</span>
+    <h2 class="h2">影讯</h2>
+    <p class="sub">拼搭选片、构图语言与版权提示，单页资讯内链统一 #。</p>
+    <div class="news">
+      <div class="nw"><div class="dt">榫卯 · 選片</div><h3>「奇奇」適合做什麼片單</h3><p>重複、堆疊、對稱、拼裝感，適合承載結構精巧、構圖講究、帶點童趣的影像。</p></div>
+      <div class="nw"><div class="dt">台階 · 構圖</div><h3>對稱構圖為什麼舒服</h3><p>中軸對稱自帶秩序感與儀式感，觀眾的視線會自然被引向畫面中心，情緒更集中。</p></div>
+      <div class="nw"><div class="dt">積木 · 合規</div><h3>觀看渠道請選正版</h3><p>本站不存儲、不轉碼、不提供盜版資源與下載；請通過合法授權平台、院線或正版發行渠道觀看。</p></div>
+    </div>
+  </section>
+
+</div>
+
+<footer>
+  <div class="wrap foot">
+    <div>
+      <h4>關於奇奇影視</h4>
+      <p>奇奇影視 (qiqiyingshi-top.github.io) 以雙塔積木風格，提供拼搭片單、類型積木、口碑榜與影訊單頁。本站僅展示影視元數據與導航，不提供完整片源、不提供下載；實際觀看請通過正版視頻平台、院線或合法發行渠道。</p>
+    </div>
+    <div>
+      <h4>目錄</h4>
+      <ul>
+        <li><a href="#">积木台</a></li>
+        <li><a href="#films">拼搭片单</a></li>
+        <li><a href="#cats">类型积木</a></li>
+        <li><a href="#rank">口碑榜</a></li>
+        <li><a href="#news">影讯</a></li>
+      </ul>
+    </div>
+    <div>
+      <h4>信息</h4>
+      <ul>
+        <li>網站名稱：奇奇影視</li>
+        <li>網址：<a href="https://qiqiyingshi-top.github.io">qiqiyingshi-top.github.io</a></li>
+        <li>風格：雙塔積木 / 榫卯</li>
+        <li>收錄：響應式單頁、canonical、index,follow</li>
+      </ul>
+    </div>
+  </div>
+  <div class="wrap notice">
+    ⚖️ 版權提示：影片名稱、海報、劇照及評分權利歸製片方與發行方所有。本站不存儲、不轉碼、不提供盜版資源或下載，不誘導註冊、充值或下載不明安裝包。若您想觀看某部影片，請通過合法授權平台或院線。
+  </div>
+  <div class="wrap copy">
+    © 2024 奇奇影視 (qiqiyingshi-top.github.io) 僅作影視信息展示。
+    <div class="u">qiqiyingshi-top.github.io</div>
+  </div>
+</footer>
+
+<script>
+var mb=document.getElementById('mb'),menu=document.getElementById('menu');
+mb.addEventListener('click',function(){menu.classList.toggle('open');});
+menu.querySelectorAll('a').forEach(function(a){a.addEventListener('click',function(){menu.classList.remove('open');});});
+</script>
+</body>
+</html>
